@@ -1,12 +1,37 @@
-## Black-Derman-Toy (BDT) model for pricing interest rate derivatives
+# Derivative Pricing
 
-This C++ code implements the Black-Derman-Toy (BDT) model for pricing interest rate derivatives. The BDT model is a one-factor short-rate model that assumes that the short-term interest rate follows a log-normal process.
+This codebase contains C++ algorithms for pricing financial derivatives, including the Black-Scholes, Binomial, Monte Carlo, and Black-Derman-Toy models. The code is well-documented, adaptable, and open-source.
 
-The code is organized into several functions:
-- `BDTModel`: This function takes the current short-term interest rate, the time to maturity of the option, and the volatility of the short-term interest rate as inputs, and returns a vector containing the binomial tree of interest rates.
-- `OptionPrice`: This function takes the binomial tree of interest rates and the strike price of the option as inputs, and returns the price of the option.
-- `main`: This function sets the initial parameters, calls the `BDTModel` function to generate the binomial tree of interest rates, and then calls the `OptionPrice` function to calculate the price of the option.
+## Getting Started
 
-To use the code, simply compile it using a C++ compiler and run the executable. You will be prompted to enter the initial short-term interest rate, the time to maturity of the option, the volatility of the short-term interest rate, and the strike price of the option. The code will then calculate and output the price of the option.
+To get started, clone this repository to your local machine:
 
-The code can be made more complex by adding additional functions to calculate the implied volatility of the short-term interest rate, the delta and gamma of the option, or by allowing the user to input the binomial tree of interest rates directly. Additionally, the code can be optimized for performance by using more efficient data structures, such as matrices or arrays, instead of vectors, and by implementing parallelization techniques to speed up the calculation.
+```
+git clone https://github.com/subhamdg/derivative-pricing.git
+```
+
+The code is written in C++ and can be compiled using a C++ compiler. The code has been tested on Linux and macOS.
+
+## Usage
+
+Each pricing model is implemented in its own source file. To use a particular model, include the corresponding header file in your code:
+
+```
+#include "black_scholes.h"
+```
+
+Then, call the pricing function with the necessary parameters:
+
+```
+double price = black_scholes_price(S, K, r, sigma, T);
+```
+
+where `S` is the stock price, `K` is the strike price, `r` is the risk-free rate, `sigma` is the volatility, and `T` is the time to expiration.
+
+## Contributing
+
+Contributions to this codebase are welcome. If you find a bug or would like to add a new feature or model, please open an issue or submit a pull request.
+
+## Acknowledgments
+
+This code is based on the book *Options, Futures, and Other Derivatives* by John C. Hull.
