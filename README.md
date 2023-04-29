@@ -1,4 +1,4 @@
-README
+## Black-Derman-Toy (BDT) model for pricing interest rate derivatives
 
 This C++ code implements the Black-Derman-Toy (BDT) model for pricing interest rate derivatives. The BDT model is a one-factor short-rate model that assumes that the short-term interest rate follows a log-normal process.
 
